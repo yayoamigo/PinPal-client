@@ -34,7 +34,6 @@ function App() {
       lat: lat,
       long: lng,
     });
-    console.log(pins)
   };
 
   const handleSubmit = async (e) => {
@@ -49,7 +48,7 @@ function App() {
     };
 
     try {
-      const res = await axios.post("/pins", newPin);
+      const res = await axios.post("https://54.235.5.95:8000/api/pins", newPin);
       setPins([...pins, res.data]);
       setNewPlace(null);
     } catch (err) {
@@ -60,7 +59,7 @@ function App() {
   useEffect(() => {
     const getPins = async () => {
       try {
-        const allPins = await axios.get("/pins");
+        const allPins = await axios.get("https://54.235.5.95:8000/api/pins");
         setPins(allPins.data);
       } catch (err) {
         console.log(err);
