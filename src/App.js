@@ -21,16 +21,6 @@ function App() {
   const [star, setStar] = useState(0);
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
-  const [viewport, setViewport] = useState({
-    latitude: 47.040182,
-    longitude: 17.071727,
-    zoom: 4,
-  });
-
-   
-  useEffect(() => {
-   console.log(pins)
-  }, []);
 
 
   const handleMarkerClick = (id) => {
@@ -77,6 +67,7 @@ function App() {
       }
     };
     getPins();
+    // eslint-disable-next-line
   }, []);
 
   const handleLogout = () => {
